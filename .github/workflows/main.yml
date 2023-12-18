@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sed "s/DATEHERE/$(date '+%Y%m%d')/g" public/index.html
+      - run: sed -i "s/DATEHERE/$(date +"%D")/g" public/index.html
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GH_TOKEN }}"
