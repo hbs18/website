@@ -1,0 +1,127 @@
+/* CSS Document */
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+}
+*{
+	font-family: 'roboto';
+}
+.jumbotron1 {
+	/*stavlja marginu na cjeli jumbotron da malo ljepse izgleda*/
+	margin: 0px;
+	
+}
+
+.jumbotron2 {
+	/*boje za jumbotron*/
+	background-color:#222222;
+	color:lightgrey;
+	
+}
+
+.jumbotron3 {
+	/*slika za jumbotron*/
+	background-image: url(screens/jumbotron_bg2.jpg);
+	background-size:cover;
+	background-position:center;
+	margin-top: -20px;
+	
+}
+
+.jumbotronitems {
+	/*stavlja marginu na stvari u jumbotronu da ljepse izgledaju i centrira ih*/
+	margin: 20px;
+	text-align: center;
+}
+
+.fluiditems {
+	/*adjustmentsi za stvari u fluid tablici*/
+	margin: 20px;
+	text-align: center;
+}
+
+.fluiditems2 {
+	/*adjustmentsi za stvari u zadnjem redu fluid tablice*/
+	margin: 20px;
+	text-align: center;
+}
+
+.opisauta {
+	/*adjustmentsi za stvari u opisu auta*/
+	text-align: left;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: darkred;
+    border-color: darkred;
+}
+.btn-primary:hover
+{
+	border-color: #4F0000;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: darkred !important;
+  border-color: #4F0000 !important;
+}
+
+.textadjustments {
+	/*adjustmentsi za velicinu teksta i to sve*/
+	font-size: 16px;
+}
+
+.navbarfix {
+	/*da navbar nema bjelu crtu dole*/
+	border: 0px;
+}
+
+.footer {
+  position: bottom;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.slikaadjustments {
+	display:block;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.slikaadjustments2 {
+	display:block;
+	margin-left: 50px;
+}
+.google-maps {
+        position: relative;
+        padding-bottom: 20%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+.google-maps-naslovna {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps-naslovna iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }

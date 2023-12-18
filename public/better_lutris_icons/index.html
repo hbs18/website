@@ -1,0 +1,76 @@
+
+<!doctype html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="/css.css" />
+<meta charset="utf-8">
+<title>How to get better Lutris game icons in GNOME</title>
+</head>
+<style>
+	body {background-image: url(back.jpg);}	
+	.link {font-size: 18px;}
+	.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+@media only screen and (max-width: 1081px) {
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+</style>
+<style type="text/css">body{margin:40px
+auto;max-width:750px;line-height:1.6;font-size:18px;padding:0
+10px}h1,h2,h3{line-height:1.2}</style>
+<style>
+  .quote1 {
+    background-color: #f5f7fa;
+    border-left: 5px solid #a9a9a9;
+    padding: 0.4em;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+code{
+  font-size:14px;
+  padding: 0.4em;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+</style>
+
+
+
+
+
+
+<body max-width: 150px;>
+	<h1><i>How to get better Lutris game icons in GNOME</i></h1>
+<hr>
+<p>Lutris, by default, makes your game icon blurry when you choose to add its icon to the GNOME "Show Applications" menu.</p>
+
+<p><figure><img src="issue_preview.png" class="center" style="max-width:150px"><figcaption style="text-align:center"><i>Image by GitHub user <a href="https://github.com/Mel34">Mel34</a></i></figcaption></figure></p>
+
+<p>Unfortunately, it seems not even the Lutris dev team knows why they do it like that:</p>
+<figure><blockquote class="quote1">I'm really not sure why we transform icons and banners when the user sets a custom one anyway. I think it would be much simpler to make no transformation whatsoever and just check whether the input image fits the criteria for an icon/banner (we could check whether the image is square and in png format for icons and whether it's the right pixel size for a banner).</blockquote><figcaption style="text-align: right; margin-right: 40px; color: #454545;"><i>From the this problem's <a href="https://github.com/lutris/lutris/issues/2934#issuecomment-665786830">issue page</a></i></figcaption></figure>
+<p>Nevertheless, it's not particularly difficult to fix this issue and have a nice-looking application menu again.</p>
+<p>First, let Lutris make a desktop shortcut for your game. In Lutris, right-click the game of your choice and select <i>Create desktop shortcut</i>.</p>
+<p>Lutris will create a <code>.desktop</code> file on your desktop. The next step is to adjust the shortcut to have the high-res icon you provided for your game. Open the file Lutris created with a text editor and change its icon entry to point to your icon file. For example, in my case I changed icon defining the line to:</p>
+<p><code>Icon=/home/hbs18/Downloads/MW3.png</code></p> 
+<p>After setting the correct icon, you have to copy the shortcut to GNOME's shortcuts folder. To populate the list of apps in the applications menu, GNOME loads .shortcut files from <code>/usr/share/applications</code>. You need to move the shortcut file to this directory. Open a terminal in the directory where your shortcut file resides and use the moves command to move your shortcut there (with elevated permissions, of course). In my case, the command was:</p>
+<p><code><font color="#4E9A06"><b>hbs18@y700</b></font>:<font color="#3465A4"><b>~</b></font>$ sudo mv net.lutris.mw3-3.desktop /usr/share/applications</code></p>
+<p>The last step is to set appropriate permissions so the app can show in the applications menu. In my case, I used the following commands:</p>
+<p style="background-color: rgba(0, 0, 0, 0.2);"><code style="background-color: rgba(0, 0, 0, 0);"><font color="#4E9A06"><b>hbs18@y700</b></font>:<font color="#3465A4"><b>~</b></font>$ cd /usr/share/applications</code><br><code style="background-color: rgba(0, 0, 0, 0);"><font color="#4E9A06"><b>hbs18@y700</b></font>:<font color="#3465A4"><b>~</b></font>$ sudo chmod 777 net.lutris.mw3-3.desktop</code></p>
+<p>And the end result is: </p>
+<p><figure><img src="better_icons.png" class="center" style="max-width:300px"><figcaption style="text-align:center"><i>icons that don't suck!</i></figcaption></figure></p>
+<p>If by any quantum of possibility a Lutris developer is reading this, please fix this issue. Doing this for a full game library is quite tedious.</p>
+<a href="http://hbs18.cf"><img src="back.gif">Get me outta here!</a>
+</body>
+</html> 
