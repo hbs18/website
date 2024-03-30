@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           sed "s/DATEHERE/$(date)/g" public/index.html > public/index.new ; mv public/index.new public/index.html
-          unzip public/oldicons/oldicons.zip -d public/oldicons/icons
+          unzip public/oldicons/icons.zip -d public/oldicons/icons
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GH_TOKEN }}"
